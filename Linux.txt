@@ -1,0 +1,127 @@
+Linux
+------
+------
+How to check linux OS
+cat /etc/os-release
+
+check ip address
+ifconfig
+hostname -I
+
+check cpu
+cpuinfo
+cat /proc/cpuinfo
+
+check ram
+free -h
+
+check disk 
+df -h
+
+disk usgage
+du -h
+
+check logs
+tail -f
+generally logs find in /var/appname
+
+file hirarchy
+/etc  - config
+/bin - executable/binary
+/opt - application
+/home - users
+/tmp - temp
+/mnt - mount new devices
+/var - logs
+/proc - virtual dir
+
+install
+apt - ubunutu
+yum - redhat
+
+connect 2ways
+through - credentials username/password
+through - ssh keys - recommended - private/public
+
+sudo 
+- to get privilege access
+
+cronjob
+crontab -e
+crontab -l
+* * * * *
+m h d m w
+
+nc -vz //to check if port open
+
+ps -nlp
+systemctl start/stop/restart/status
+kill -9 appid // to kill application
+
+top command performance
+
+find command - 
+
+curl / wget - download
+
+
+Terraform
+----------
+----------
+Modules - types
+Dynamic Block
+Optional Attribute
+UnLock - 3 types - unlock, release, delete lock file
+sensitive - information
+key vault integrate 
+init, plan, apply
+current version
+terragrunt tool - multiple folder 
+import - why
+how to use multiple user in tf 
+multi subscription deployment
+taint - distroy/create
+fmt/validate
+branching startegy or folder - dev/qa/prd
+Backend statefile
+depends On
+count[index] vs for-each[map/list]
+another use case of count - boolean/true-false
+map vs list
+providers files
+component - resource, providers, data, var, output, backend, module, init/plan/apply
+lifecycle
+destroy specific resource
+root and child Module
+var and output
+workspace  - default/dev/qa/prd
+resource graph 
+null resource = optional
+provisionar - exec, local, zip, remote
+implicit and explicit depends
+
+declrative - file and then execute
+imperative - direct cli command
+
+
+Git
+----
+----
+git - azure repo and github
+branching startegy in current project
+pull request
+branch
+pull = fetch+merge
+merge
+merge conflict
+commit history
+checkout branch
+create branch
+delete branch
+reset 
+git diff
+git stash
+git tag
+git release
+git rebase
+add, commit, push

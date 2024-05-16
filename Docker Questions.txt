@@ -1,0 +1,59 @@
+1. *What is Docker? How does it differ from virtual machines (VMs)?*
+   
+   *Answer:* Docker is a containerization platform that allows you to package applications and their dependencies into lightweight containers that can run on any environment. Unlike virtual machines, containers share the host OS kernel, which makes them more lightweight and efficient.
+
+2. *Explain the Docker architecture.*
+
+   *Answer:* Docker uses a client-server architecture. The Docker client communicates with the Docker daemon, which manages Docker objects such as images, containers, networks, and volumes. The Docker daemon interacts with the container runtime to build, run, and distribute containers.
+
+3. *What is a Docker image? How is it different from a Docker container?*
+
+   *Answer:* A Docker image is a read-only template that contains the application code, runtime, libraries, and other dependencies required to run an application. A Docker container is an instance of an image that can be executed as a process. You can create multiple containers from the same image.
+
+4. *Explain Dockerfile and its usage.*
+
+   *Answer:* A Dockerfile is a text file that contains instructions for building a Docker image. It specifies the base image, environment variables, commands to run during the build process, and other configuration settings. Docker uses the Dockerfile to automate the image creation process.
+
+5. *What is Docker Compose?*
+
+   *Answer:* Docker Compose is a tool for defining and running multi-container Docker applications. It uses a YAML file (docker-compose.yml) to define the services, networks, and volumes required for an application. Docker Compose simplifies the process of managing complex multi-container deployments.
+
+6. *How do you manage Docker networking?*
+
+   *Answer:* Docker provides several networking options, including bridge networks, host networking, overlay networks, and macvlan networks. You can create custom networks using the docker network create command and specify the network mode when running containers using the --network option.
+
+7. *Explain Docker volumes and their significance.*
+
+   *Answer:* Docker volumes are persistent storage mechanisms that allow data to be shared between containers or between a container and the host system. Volumes are useful for storing application data, databases, logs, and other persistent information. They provide a way to persist data even if the container is stopped or deleted.
+
+8. *What is Docker Swarm? How does it differ from Kubernetes?*
+
+   *Answer:* Docker Swarm is a native clustering and orchestration tool for Docker containers. It allows you to create and manage a cluster of Docker hosts, deploy services across the cluster, and scale applications horizontally. Kubernetes is a more comprehensive container orchestration platform developed by Google. It provides advanced features for automating deployment, scaling, and management of containerized applications.
+
+9. *How do you monitor Docker containers and services?*
+
+    *Answer:* Docker provides built-in monitoring and logging capabilities through tools like Docker Stats, Docker Events, and Docker Logs. Additionally, you can use third-party monitoring solutions such as Prometheus, Grafana, or ELK stack to monitor Docker containers and services effectively.
+
+10. *How do you ensure security in Docker environments?*
+
+    *Answer:* Security in Docker environments can be ensured by following best practices such as using official Docker images, regularly updating images and containers, implementing network segmentation, limiting container privileges, using secrets management tools for sensitive data, and monitoring for vulnerabilities and suspicious activities.
+
+11. **Explain the COPY and ADD instructions in Dockerfile. What are their differences?**
+
+    *Answer:* Both COPY and ADD instructions are used in Dockerfile to copy files or directories from the host machine to the container's filesystem. The main difference between them is that ADD can also extract tar archives and supports URLs as sources. However, it's recommended to use COPY for straightforward file copying, as it's more transparent and less prone to unexpected behavior.
+
+12. **What is the ENTRYPOINT instruction in Dockerfile? How is it different from CMD?**
+
+    *Answer:* The ENTRYPOINT instruction in Dockerfile specifies the command to be executed when the container starts. It's often used to define the main application process. The CMD instruction, on the other hand, specifies the default command and arguments to be executed when the container starts if no other command is provided. The main difference is that CMD can be overridden when running the container, while ENTRYPOINT cannot be overridden but can be appended to with additional arguments.
+
+13. *What is a multi-stage build in Dockerfile? How does it improve image size and build time?*
+
+    *Answer:* A multi-stage build in Dockerfile allows you to use multiple FROM instructions in a single Dockerfile. Each FROM instruction starts a new build stage with its own environment. This is useful for optimizing Docker images by separating build dependencies from the final runtime image. It improves image size and build time by eliminating the need to include unnecessary build tools and dependencies in the final image.
+
+14. **Explain the RUN instruction in Dockerfile. What are best practices for using it?**
+
+    *Answer:* The RUN instruction in Dockerfile is used to execute commands during the image build process. It's commonly used to install packages, set up configurations, and perform other build tasks. Best practices for using RUN include combining multiple commands into a single RUN instruction to reduce layer size, using package managers with clean-up commands to minimize image size, and chaining commands together with && to reduce the number of layers.
+
+15. *What are Docker labels? How are they used?*
+
+    *Answer:* Docker labels are key-value pairs that can be attached to Docker images, containers, volumes, networks, and other Docker objects. They provide metadata about the object, such as version information, maintainer details, or any custom information. Labels can be added to Dockerfiles using the LABEL instruction or applied manually using the docker CLI. They are useful for organizing and managing Docker resources and for adding custom metadata for automation and tracking purposes.

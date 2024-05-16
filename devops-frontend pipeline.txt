@@ -1,0 +1,59 @@
+trigger:
+- main
+
+pool: Cp
+
+stages: 
+  - stage: Buildstage
+    displayName: Building the react app
+    jobs: 
+      - job: BuildingTheUi
+        steps:
+          - task: NodeTool@0
+            displayName: Installing_nodejs_16
+            inputs:
+              versionSource: 'spec'
+              versionSpec: '16.x'
+
+          - task: Npm@1
+            displayName: NPM_INSTALL
+            inputs:
+              command: 'install'
+          
+          - task: Npm@1
+            displayName: NPM_BUILD
+            inputs:
+              command: 'custom'
+              customCommand: 'run build'
+          
+          - task: PublishBuildArtifacts@1
+            inputs:
+              PathtoPublish: '$(Build.SourcesDirectory)/build/'
+              ArtifactName: 'ReactBuild'
+              publishLocation: 'Container'
+
+  - stage: Public
+    jobs:
+      - job: PublicTheArtifics
+        steps: 
+          - task: DownloadBuildArtifacts@1
+            inputs:
+              buildType: 'current'
+              downloadType: 'single'
+              artifactName: 'ReactBuild'
+              downloadPath: '$(System.ArtifactsDirectory)'
+          
+          - task: CopyFilesOverSSH@0
+            inputs:
+              sshEndpoint: 'madan-vm'
+              sourceFolder: '$(System.ArtifactsDirectory)/ReactBuild/'
+              contents: ''
+              targetFolder: '/tmp/react-app/'
+              readyTimeout: '20000'
+          
+          - task: SSH@0
+            inputs:
+              sshEndpoint: 'madan-vm'
+              runOptions: 'commands'
+              commands: 'cd /tmp/react-app && cp . /var/www/html -r'
+              readyTimeout: '20000'

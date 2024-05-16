@@ -1,0 +1,106 @@
+Usefull Commands and Their characteristics.
+
+cat /etc/os-release: This command displays information about your operating system. It typically includes details about the OS name, version, and other related information.
+
+ifconfig: This command is used to display network interface configuration. It shows information like IP addresses, MAC addresses, and more for all active network interfaces.
+
+hostname -I: This command shows the IP address associated with the local hostname. It can be useful to quickly check the local IP address of a system.
+
+cpuinfo or cat /proc/cpuinfo: These commands are used to display detailed information about the CPU (Central Processing Unit) of your system, including its model, number of cores, and more.
+
+free -h: This command displays information about the system's memory usage, including total, used, and free memory, in a human-readable format.
+
+df -h: This command is used to display information about disk space usage. It shows the amount of disk space used and available on all mounted filesystems in a human-readable format.
+
+du -h: The du command is used to display disk usage for files and directories. The -h option makes the output human-readable.
+
+tail -f: This command is used to monitor and display the last few lines of a file in real-time as new data is added to it. It's often used for log files.
+
+apt (Ubuntu) and yum (Red Hat): These are package managers for Ubuntu and Red Hat-based Linux distributions, respectively. They are used to install, update, and manage software packages.
+
+sudo: This command allows a permitted user to execute a command as the superuser or another user, as specified by the security policy. It's often used to run commands with elevated privileges.
+
+cronjob: A cron job is a scheduled task in Linux. It's a command or script that is set to run at specified intervals automatically. You can use the cron service to manage and schedule these jobs.
+
+crontab -e: This command is used to edit your user-specific cron jobs. It opens the user's crontab file in an editor, allowing you to add, modify, or remove scheduled tasks.
+
+crontab -l: This command displays the list of scheduled cron jobs for the current user.
+
+nc -vz: This is used to check if a remote network service is accessible. It performs a network connectivity test by trying to establish a connection to a given host and port.
+
+ps -nlp: This command displays information about running processes. The -n option displays numeric user and group IDs, and the -l option provides detailed information.
+
+systemctl: This command is used to control and manage systemd services and units in modern Linux distributions. It can start, stop, enable, disable, and display status information for services.
+
+kill -9: This is used to forcefully terminate a process by sending the SIGKILL signal. It's a last-resort option when a process doesn't respond to regular termination signals.
+
+find command: It's used to search for files and directories within a specified directory hierarchy based on various criteria like name, size, or modification time.
+
+curl / wget: These are command-line tools for downloading files from the internet. They can retrieve files from web servers using various protocols like HTTP, HTTPS, FTP, and more.
+
+Here are brief explanations of the characteristics of the listed directories in a Linux filesystem:
+
+/etc (Configuration):
+
+/etc is primarily used for system-wide configuration files.
+It contains configuration settings and data for various system services and applications.
+Important files like /etc/passwd and /etc/hostname are stored here.
+
+/bin (Executable/Binary):
+
+/bin stands for "binary" and contains essential binary executables.
+It contains core system utilities and commands needed for system recovery or repair, even if the root file system isn't fully mounted.
+
+/opt (Application):
+
+/opt is used for installing additional software packages or applications.
+It's typically used for programs that are not part of the core system and are optional or add-on software.
+/home (Users):
+
+/home is where user home directories are located.
+Each user on the system typically has their own subdirectory within /home to store their personal files and settings.
+
+/tmp (Temporary):
+
+/tmp is a directory for temporary files.
+It is often used by applications to store temporary data that doesn't need to persist across reboots.
+
+/mnt (Mount New Devices):
+
+/mnt is a common location for temporarily mounting external devices or network shares.
+It provides a convenient place to mount new filesystems before they are integrated into the directory structure.
+/var (Logs):
+
+/var stands for "variable" and contains data that is expected to change in size and nature during the normal operation of the system.
+This directory often contains log files, spool directories, and other variable data, including databases and cache files.
+
+/proc (Virtual Directory):
+
+/proc is a special virtual filesystem that provides information about system processes and kernel parameters.
+It's not a typical directory with regular files but a way to interact with the kernel and retrieve process and system information.
+These directories play essential roles in the Linux file system, helping organize and manage various aspects of the system, from configurations and user data to temporary storage and system logs.
+
+
+Logging into a Linux system can be done in various ways, but the most common methods are through credentials (username and password) and through SSH keys. Here's a brief explanation of both methods:
+
+Credentials (Username and Password):
+
+This is the most common way of logging into a Linux system.
+When you boot up your system, you'll typically see a login prompt where you can enter your username and password.
+After entering the correct credentials, the system will grant you access to your user account.
+It's important to keep your username and password secure and not share them with unauthorized individuals.
+SSH Keys (Recommended - Private/Public):
+
+SSH (Secure Shell) keys provide a more secure and convenient way to log into a Linux system.
+It involves a pair of keys: a private key (kept securely on your computer) and a public key (uploaded to the Linux server you want to access).
+Here's how it works:
+Generate a key pair: You create a public/private key pair on your local computer.
+Copy the public key to the server: You upload the public key to your user's home directory on the remote Linux server.
+Secure the private key: The private key should be kept secure on your local machine.
+SSH into the server: When you attempt to log in, the server checks your private key against the stored public key. If they match, you're granted access.
+This method is more secure than passwords because even if someone gets hold of your private key, they would still need the passphrase to use it.
+The SSH key method is recommended for its security benefits, as it doesn't rely on a password that can be guessed or stolen. It's also commonly used for automated tasks and remote server administration. However, it's essential to properly manage your keys and protect your private key with a passphrase for added security.
+
+
+
+

@@ -1,0 +1,83 @@
+Git commands and features :
+
+git (Azure Repo and GitHub):
+
+Git is a distributed version control system that allows multiple people to collaborate on code development.
+Azure Repos and GitHub are web-based platforms that host Git repositories and provide collaboration tools.
+
+Branching Strategy in Current Project:
+
+A branching strategy defines how code changes are organized into branches, like feature branches, release branches, and the main branch (often main or master).
+
+Pull Request:
+
+A pull request is a feature in platforms like GitHub and Azure DevOps that enables developers to propose code changes to a project.
+It's a request for others to review and merge code into the main branch.
+
+Branch:
+
+A branch is a separate line of development in Git, allowing you to work on a specific feature or fix independently.
+
+Pull (Fetch + Merge):
+
+A pull combines two operations: fetching changes from a remote repository and merging those changes into your local branch.
+
+Merge:
+
+Merging is the process of integrating changes from one branch into another branch, typically from a feature branch into the main branch.
+
+Merge Conflict:
+
+A merge conflict occurs when Git cannot automatically merge changes from different branches, and manual intervention is required to resolve the conflict.
+
+Commit History:
+
+The commit history shows a chronological list of changes made to a Git repository, including who made the changes and when.
+
+Checkout Branch:
+
+The git checkout command is used to switch between different branches in a Git repository.
+
+Create Branch:
+
+The git branch command is used to create a new branch, allowing you to work on a new feature or fix.
+
+Delete Branch:
+
+The git branch -d or git branch -D command is used to delete a branch. -d is for a safe delete, and -D is for a force delete.
+
+Reset:
+
+The git reset command is used to move the HEAD and current branch pointer to a specific commit or undo the latest commits.
+
+git diff:
+
+The git diff command is used to view the differences between commits, branches, or files.
+
+git stash:
+
+The git stash command is used to temporarily save changes that you're not ready to commit, allowing you to switch to another branch or task.
+
+git tag:
+
+Tags are used to mark specific points in Git history, often to denote releases or important commits.
+
+Git Release:
+
+A release in Git refers to a specific version of a software project, often marked with a tag, and may include associated documentation and assets.
+
+Git Rebase:
+
+Rebase is used to rewrite the commit history. It allows you to move, combine, or change commits to make your branch cleaner before merging.
+
+Add, Commit, Push:
+
+These are fundamental Git commands.
+git add stages changes for commit.
+git commit records changes to the repository with a message.
+git push uploads your local changes to a remote repository.
+These Git commands and features are essential for version control, collaboration, and project management when working with source code and repositories.
+
+
+
+

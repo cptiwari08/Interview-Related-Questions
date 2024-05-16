@@ -1,0 +1,23 @@
+1.When you terraform plan so what its compare .
+
+2.What is the service end point .
+
+3.Internal routing in vertual mancine .
+
+4.I want to store vm logs in storage blob privetly so what infra changes we do .
+
+5.Where you save vm logs .
+
+6.Do you use module 
+
+7.Is it possible to use multiple provider in single code .
+
+8.Scale Up and scale out.
+
+9 can we use multiple provider in single code .
+
+10. how can we use multiple provider .
+
+11. when we run pipeline so there is possiblity of lock state .
+
+12. lock state situation come on locally or remotely.

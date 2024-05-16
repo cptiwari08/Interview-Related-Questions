@@ -1,0 +1,53 @@
+1. *What are the different types of Terraform modules?*
+   *Answer:* Terraform modules can be categorized into reusable components that encapsulate infrastructure resources, providers, variables, and outputs. There are three main types of Terraform modules: root modules, child modules, and third-party modules.
+
+2. *Explain the concept of a Dynamic Block in Terraform.*
+   *Answer:* Dynamic Blocks in Terraform allow for the creation of repeated blocks of configuration within a resource or module. They enable the dynamic generation of configuration blocks based on input variables, such as lists or maps, providing flexibility and reducing duplication in Terraform code.
+
+3. *What is the purpose of the sensitive attribute in Terraform?*
+   *Answer:* The sensitive attribute in Terraform is used to mark sensitive information within resource configurations. When a resource attribute is marked as sensitive, its value will not be displayed in Terraform output, state files, or plan files, helping to protect sensitive data such as passwords or API keys.
+
+4. *Explain the Unlock feature in Terraform. What are the three types of unlock operations?*
+   *Answer:* The Unlock feature in Terraform is used to release or delete lock files created by Terraform during operations to prevent concurrent modifications to the same state file. There are three types of unlock operations: unlock, release, and delete lock file.
+
+5. *How can Terraform integrate with key vaults for managing sensitive information?*
+   *Answer:* Terraform can integrate with key vault services, such as AWS Key Management Service (KMS) or HashiCorp Vault, to securely store and manage sensitive information such as passwords, API keys, or certificates. Terraform retrieves sensitive data from key vaults during runtime and does not expose it in plain text in configuration files or state files.
+
+6. *Describe the workflow of Terraform commands init, plan, and apply.*
+   *Answer:* The init command initializes a Terraform working directory by downloading provider plugins and modules specified in the configuration files. The plan command generates an execution plan describing the changes that Terraform will make to reach the desired state. The apply command executes the changes described in the execution plan, creating, updating, or deleting resources as necessary.
+
+7. *What is the purpose of the terraform import command? Why would you use it?*
+   *Answer:* The terraform import command is used to import existing infrastructure resources into Terraform state. It associates the resource with a Terraform configuration, allowing you to manage the resource's lifecycle using Terraform. This command is useful for adopting Terraform for existing infrastructure or managing resources provisioned outside of Terraform.
+
+8. *How do you manage multiple users in a Terraform configuration?*
+   *Answer:* Multiple users can collaborate on Terraform configurations by utilizing version control systems such as Git and implementing access control mechanisms. Each user can have their own Terraform workspace and access permissions, allowing them to work on different aspects of the infrastructure concurrently while maintaining version history and collaboration.
+
+9. *Explain the concept of multi-subscription deployment in Terraform.*
+   *Answer:* Multi-subscription deployment in Terraform refers to the ability to manage resources across multiple cloud subscriptions or accounts within the same Terraform configuration. This allows for centralized management of infrastructure spanning different environments or organizational units while maintaining consistency and governance.
+
+10. *What is the purpose of the taint command in Terraform? How does it relate to resource lifecycle?*
+    *Answer:* The taint command in Terraform marks a resource for destruction and recreation during the next apply operation. It forces Terraform to destroy and recreate the specified resource, effectively "tainting" it. This can be useful for troubleshooting or forcing updates to resources with complex dependencies.
+
+11. *Explain the purpose of the fmt and validate commands in Terraform.*
+    *Answer:* The fmt command in Terraform is used to automatically format Terraform configuration files according to a canonical style. It helps maintain consistency and readability across configuration files. The validate command, on the other hand, is used to check the syntax and validity of Terraform configuration files, ensuring they conform to the Terraform language specification and are free of syntax errors.
+
+12. *What branching strategy or folder structure do you recommend for organizing Terraform code across different environments (e.g., dev, qa, prd)?*
+    *Answer:* A common approach is to organize Terraform code into separate folders or branches for each environment (e.g., dev, qa, prd). Each environment folder or branch contains its own set of Terraform configuration files and state files, allowing for independent management and deployment of infrastructure resources for each environment while maintaining a clear separation of concerns.
+
+13. *Explain the concept of Backend statefile in Terraform. Why is it important?*
+    *Answer:* The Backend statefile in Terraform is a mechanism for storing the Terraform state remotely, outside of the local working directory. It allows for collaboration among team members working on the same infrastructure, as well as for storing sensitive information securely. Using a backend for state management ensures consistency and reliability across Terraform operations and environments.
+
+14. *What is the difference between count[index] and for-each[map/list] in Terraform? When would you use each?*
+    *Answer:* The count[index] and for-each[map/list] constructs in Terraform are used to create multiple instances of a resource or module based on a specified count or a collection (map or list) of values, respectively. count is used when the number of instances is known in advance and fixed, while for-each is used when the number of instances may vary or when specific configurations need to be applied to each instance individually.
+
+15. *Describe another use case of count in Terraform besides creating multiple resource instances.*
+    *Answer:* Another use case of count in Terraform is to conditionally enable or disable the creation of resources based on boolean or true/false values. For example, you can use count to create a resource only if a certain condition is met, allowing for dynamic resource provisioning based on runtime conditions.
+
+16. *Explain the difference between map and list data structures in Terraform. When would you use each?*
+    *Answer:* In Terraform, a map is a collection of key-value pairs, while a list is an ordered collection of elements. Maps are typically used to represent configurations with named attributes or properties, while lists are used for ordered collections of elements where the index is significant. You would use a map when working with named attributes or when you need to access elements by key, and you would use a list when you need to maintain order or access elements by index.
+
+17. *What is the purpose of the providers.tf file in Terraform?*
+    *Answer:* The providers.tf file in Terraform is used to declare the provider configurations for the Terraform project. It specifies which providers (e.g., AWS, Azure, Google Cloud) are used in the project and allows for configuration of provider-specific settings such as access keys, regions, and endpoints.
+
+18. *Explain the concept of a Terraform component. What are the key components in a typical Terraform project?*
+    *Answer:* A Terraform component is a reusable building block that encapsulates infrastructure resources, providers, data sources, variables, outputs, backend configurations, and lifecycle management settings. Key components in a typical Terraform project include resources (defining infrastructure), providers

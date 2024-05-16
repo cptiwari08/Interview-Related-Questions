@@ -1,0 +1,66 @@
+
+### Commonly Used Git Commands:
+
+1. **Clone a Repository:**
+   ```bash
+   git clone <repository_url>
+   ```
+
+2. **Create a New Branch:**
+   ```bash
+   git branch <branch_name>
+   ```
+
+3. **Switch to a Branch:**
+   ```bash
+   git checkout <branch_name>
+   ```
+
+4. **Create and Switch to a New Branch:**
+   ```bash
+   git checkout -b <new_branch_name>
+   ```
+
+5. **Commit Changes:**
+   ```bash
+   git add .
+   git commit -m "Commit message"
+   ```
+
+6. **Push Changes to a Remote Repository:**
+   ```bash
+   git push origin <branch_name>
+   ```
+
+7. **Pull Changes from a Remote Repository:**
+   ```bash
+   git pull origin <branch_name>
+   ```
+
+8. **Merge Branches:**
+   ```bash
+   git merge <branch_name>
+   ```
+
+9. **View Commit History:**
+   ```bash
+   git log
+   ```
+
+10. **View Branches:**
+    ```bash
+    git branch
+    ```
+
+### Git Interview Questions:
+
+1. **Explain the difference between Git and GitHub.**
+2. **What is the purpose of the HEAD in Git?**
+3. **Describe the difference between 'git merge' and 'git rebase'.**
+4. **How do you resolve a merge conflict in Git?**
+5. **Explain the concept of Git branching and why it is important.**
+6. **What is the Git stash, and when would you use it?**
+7. **How does Git handle binary files?**
+8. **What is a detached HEAD in Git?**
+9. **Explain the difference between 'git pull' and 'git fetch'.**
+10. **How can you undo the last commit in Git?**
